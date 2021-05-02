@@ -8,4 +8,4 @@ def buble_sort(list):   # bubble sort function
         end -= 1        # every time , index of end must be decrease
 list = [121,24654,6566,786,47,369,48,647]  # list example to test or function
 buble_sort(list) # call function
-print(list)  # print our output
+print(list)  # print our output to see resultss
