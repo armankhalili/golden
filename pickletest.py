@@ -17,3 +17,4 @@ content = open (path, "rb")
 
 toPrint = pickle.load(content)
 print(toPrint)
+content.close()
