@@ -2,7 +2,7 @@
 import pickle,time,os
 path = "C:/Users/HAL_9000/Desktop/library-manager/"
 #functions
-def addUser(name,fname,fathername,Ncode,birthday) :
+def addUser(name,fname,fathername,Ncode,birthday) :         #Add user to bianary file 
     filepath = path + "users.dat"
     file = open(filepath,"rb")
     userData = pickle.load(file)
@@ -16,7 +16,7 @@ def addUser(name,fname,fathername,Ncode,birthday) :
     file = open(filepath, "wb")
     pickle.dump(userData,file)
 
-def addBook(title, author, subject, year) :
+def addBook(title, author, subject, year) :         # Add a book to bianary file
 
     #read data from bianary file
     filepath = path + "books.dat"
@@ -32,7 +32,7 @@ def addBook(title, author, subject, year) :
     pickle.dump(bookData,file)
     file.close
 
-def search(title) :
+def search(title) :     #search funchtion for book
 
     # validation of existing file 
     checkFile("books.dat")
@@ -50,7 +50,7 @@ def search(title) :
     except :
         print("Book not found")
 
-def barrowBook(userid,title) :
+def barrowBook(userid,title) :      # assign (barrow) a book to users
     filepath = path + "barrow.dat"
     #read information and store to a variable
     file = open(filepath,"rb")
@@ -64,7 +64,7 @@ def barrowBook(userid,title) :
 
     print( "{} has been barrow to user {}".format(userid,title))
 
-def showAllUsers() :
+def showAllUsers() :        #show all users 
     filepath = path + "users.dat"
     if os.path.exists(filepath) :          #validation of existed file
         file = open(filepath,"rb")
@@ -74,7 +74,7 @@ def showAllUsers() :
             print(i,users[i],"\n")
     else :
         print("no user has been founded")
-def showAllBooks() :
+def showAllBooks() :        #Show All Books
     filepath = path + "books.dat"
     if os.path.exists(filepath) :          #validation of existed file
         file = open(filepath,"rb")
@@ -84,7 +84,7 @@ def showAllBooks() :
             print(i,books[i],"\n")
     else :
         print("no books has been founded")    
-def showAllBarrow () :
+def showAllBarrow () :      #Showw the Barrow list
     filepath = path + "barrow.dat"
     if os.path.exists(filepath) :          #validation of existed file
         file = open(filepath,"rb")
@@ -94,8 +94,8 @@ def showAllBarrow () :
             print("user ID =",i,">>>>>> Book =",barrowlist[i],"\n")
     else :
         print("Barrow list is empty")
-# validation of existing dat file
-def checkFile(file) :
+
+def checkFile(file) :   # validation of existing dat file
     filepath= path + file
     if not os.path.exists(filepath) :
         f = open(filepath, "wb+")
