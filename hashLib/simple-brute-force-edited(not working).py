@@ -6,13 +6,14 @@ def hash256(password) :                      #hash the generated password
     return hashed
 
 # open file 
-file = open ("E:/Python code/github/golden/hashLib/pass.csv")
+
 
 # main 
-for num in range(0,10000) :                  # gereneting password
+for num in range(0,10000) :   
+    file = open ("E:/Python code/github/golden/hashLib/pass.csv")               # gereneting password
     for line in file :                       # read line form file
         tempPass = str.format("%04d"%num)    # 4 digit form generated password
-        userData = line.split(",")           # name and hashed password from file
+        userDate = line.split(",")           # name and hashed password from file
 
-        if(hash256(tempPass) == userData[1].rstrip()) :
-            print("pass of {} is {}".format(userData[0],tempPass))
+        if(hash256(tempPass) == userDate[1].rstrip()) :
+            print("pass of {} is {}".format(userDate[0],tempPass))
