@@ -3,7 +3,7 @@ import requests
 
 # variable 
 
-url = "http://phpgeek.ir"
+url = "http://digikala.com"
 response = requests.get(url)
 # print("response is :\n",response)
 
